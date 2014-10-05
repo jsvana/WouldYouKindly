@@ -1,3 +1,3 @@
-var home = angular.module('legacy.home', []);
+var home = angular.module('kindly.home', []);
 
 home.controller('home', function($scope) {});

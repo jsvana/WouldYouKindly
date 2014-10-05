@@ -1,5 +1,7 @@
-angular.module('legacy.requests').directive('suggestion', function() {
+angular.module('kindly.requests').directive('suggestion', function() {
   return {
+    restrict: 'E',
+    replace: true,
     scope: {
       suggestion: '='
     },

@@ -1,0 +1,16 @@
+<div class="row suggestion">
+	<div class="col-md-2 art" ng-show="tvShow.art">
+		<img ng-src="{{ tvShow.art }}" class="img-thumbnail" style="height: 160px;">
+	</div>
+	<div class="col-md-10">
+		<strong>{{ tvShow.name }}</strong>
+		<span>({{ tvShow.year }})</span>
+		<p>
+			<span class="label label-default">{{ tvShow.rating }}</span>
+			<span>{{ tvShow.runtime }} min</span>
+			<span> - {{ tvShow.genres }}</span>
+		</p>
+		<p>Score: {{ tvShow.audienceScore }}/100</p>
+		<a ng-href="{{ tvShow.link }}">View on {{ tvShow.linkService }}</a>
+	</div>
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002220651) do
+ActiveRecord::Schema.define(version: 20141005162123) do
 
   create_table "requests", force: true do |t|
     t.string   "name"
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(version: 20141002220651) do
     t.integer  "votes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "artist"
+    t.string   "external_id"
+    t.string   "external_service"
+    t.integer  "year"
+    t.string   "rating"
+    t.string   "art"
+    t.string   "genres"
+    t.string   "link"
+    t.string   "link_service"
+    t.integer  "audience_score"
+    t.integer  "critics_score"
+    t.integer  "runtime"
   end
 
 end

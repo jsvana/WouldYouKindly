@@ -1,5 +1,7 @@
-angular.module('legacy.requests').directive('music', function() {
+angular.module('kindly.requests').directive('music', function() {
   return {
+    restrict: 'E',
+    replace: true,
     scope: {
       music: '='
     },

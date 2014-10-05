@@ -1,1 +1,1 @@
-angular.module('legacy.shared', []);
+angular.module('kindly.shared', []);

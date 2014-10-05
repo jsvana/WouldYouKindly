@@ -1,4 +1,4 @@
-angular.module('legacy.requests').
+angular.module('kindly.requests').
 factory('LastFm', ['$http', 'x2js', 'Config', function($http, x2js, Config) {
   return {
     get: function(query, callback) {

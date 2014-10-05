@@ -1,0 +1,16 @@
+<div class="row request">
+	<div class="col-md-2 art" ng-show="movie.art">
+		<img ng-src="{{ movie.art }}" class="img-thumbnail">
+	</div>
+	<div class="col-md-10">
+		<strong>{{ movie.name }}</strong>
+		<span>({{ movie.year }})</span>
+		<p>
+			<span class="label label-default">{{ movie.rating }}</span>
+			<span>{{ movie.runtime }} min</span>
+		</p>
+		<p>Audience Score: {{ movie.audienceScore }}/100</p>
+		<p>Critics Score: {{ movie.criticsScore }}/100</p>
+		<a ng-href="{{ movie.link }}">View on {{ movie.linkService }}</a>
+	</div>
+</div>

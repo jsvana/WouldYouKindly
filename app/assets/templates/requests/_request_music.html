@@ -1,0 +1,10 @@
+<div class="row suggestion">
+	<div class="col-md-2 art" ng-show="music.art">
+		<img ng-src="{{ music.art }}" class="img-thumbnail">
+	</div>
+	<div class="col-md-10">
+		<p><strong>{{ music.name }}</strong></p>
+		<p>{{ music.artist }}</p>
+		<a ng-href="{{ music.link }}" target="_blank">View on {{ music.linkSerice }}</a>
+	</div>
+</div>

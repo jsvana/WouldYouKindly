@@ -17,18 +17,29 @@
 //= require_tree ../templates
 //= require x2js/xml2json.min
 //= require angular-x2js/dist/x2js.min
-//= require legacy.module
+//
+//= require kindly.module
+//
 //= require home.controller
+//
 //= require shared/shared.module
 //= require shared/config.factory
+//
 //= require requests/requests.module
+//= require requests/request.factory
+//
 //= require requests/rottentomatoes.service
 //= require requests/lastfm.service
 //= require requests/tvdb.service
+//
 //= require requests/movie.directive
 //= require requests/music.directive
 //= require requests/tv-show.directive
+//= require requests/request_movie.directive
+//= require requests/request_music.directive
+//= require requests/request_tv-show.directive
 //= require requests/suggestion.directive
-//= require requests/request.service
+//= require requests/request.directive
+//
 //= require requests/index.controller
 //= require requests/new.controller

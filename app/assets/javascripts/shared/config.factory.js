@@ -1,4 +1,4 @@
-angular.module('legacy.shared').factory('Config', function() {
+angular.module('kindly.shared').factory('Config', function() {
   return {
     lastFm: {
       apiKey: 'ddff6ec74da47480735d6726d828d52c'

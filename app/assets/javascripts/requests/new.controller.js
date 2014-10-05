@@ -1,5 +1,7 @@
-angular.module('legacy.requests').controller('new',
-  ['$scope', '$http', 'RottenTomatoes', 'LastFm', 'TvDb', 'Request', function($scope, $http, RottenTomatoes, LastFm, TvDb, Request) {
+angular.module('kindly.requests').controller('new',
+  ['$scope', '$location', '$http', 'RottenTomatoes', 'LastFm', 'TvDb',
+  'Request', function($scope, $location, $http, RottenTomatoes, LastFm,
+  TvDb, Request) {
     $scope.suggestions = [];
     $scope.selection = null;
     $scope.medium = 'movie';
@@ -86,6 +88,19 @@ angular.module('legacy.requests').controller('new',
 
     $scope.hasSelection = function() {
       return $scope.selection !== null;
+    };
+
+    $scope.createRequest = function() {
+      var request
+        = Request.fromSuggestion($scope.selectionMedium, $scope.selection);
+
+      if (request) {
+        request.create()
+        .then(function() {
+          $location.path('/r');
+        });
+      }
+      //$location.path('/');
     };
   }]
 );

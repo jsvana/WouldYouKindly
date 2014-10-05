@@ -21,28 +21,30 @@
 
 <div ng-show="searching('movie')">
 	<label>Suggestions</label>
-	<div movie="suggestion" ng-repeat="suggestion in suggestions" ng-click="select(suggestion)"></div>
+	<movie movie="suggestion" ng-repeat="suggestion in suggestions" ng-click="select(suggestion)"></movie>
 </div>
 
 <div ng-show="searching('music')">
 	<label>Suggestions</label>
-	<div music="suggestion" ng-repeat="suggestion in suggestions" ng-click="select(suggestion)"></div>
+	<music music="suggestion" ng-repeat="suggestion in suggestions" ng-click="select(suggestion)"></music>
 </div>
 
 <div ng-show="searching('tv-show')">
 	<label>Suggestions</label>
-	<div tv-show="suggestion" ng-repeat="suggestion in suggestions" ng-click="select(suggestion)"></div>
+	<tv-show tv-show="suggestion" ng-repeat="suggestion in suggestions" ng-click="select(suggestion)"></tv-show>
 </div>
 
-<div ng-show="hasSelection()">
-	<label>Selection</label>
-	<div suggestion="selection"></suggestion>
+<div ng-show="hasSelection()" class="row">
+	<div class="col-md-12">
+		<label>Selection</label>
+		<suggestion suggestion="selection"></suggestion>
+	</div>
 </div>
 
 <div class="row">
 	<div class="col-md-12 center">
 		<div class="form-group">
-			<button class="btn btn-primary">Submit Request</button>
+			<button class="btn btn-primary" ng-disabled="!hasSelection()" ng-click="createRequest()">Submit Request</button>
 		</div>
 	</div>
 </div>

@@ -1,4 +1,4 @@
-angular.module('legacy.requests').
+angular.module('kindly.requests').
 factory('RottenTomatoes', ['$http', 'Config', function($http, Config) {
   return {
     get: function(query, callback) {

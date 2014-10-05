@@ -1,4 +1,4 @@
-angular.module('legacy.requests').controller('requests-index',
+angular.module('kindly.requests').controller('index',
   ['$scope', 'Request', function($scope, Request) {
     Request.query().then(function (requests) {
       $scope.requests = requests;

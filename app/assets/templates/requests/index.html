@@ -1,7 +1,4 @@
 <h1>Requests</h1>
-<div ng-repeat="request in requests | orderBy:predicate">
-	<h4>{{ request.name }}</h4>
-	<span>{{ request.votes }}</span>
-	<a href="#" ng-click="upvote(request)">Upvote</a>
-</div>
+<p ng-show="requests.length === 0">No requests, yet.</p>
+<request request="request" ng-repeat="request in requests | orderBy:predicate"></request>
 <a href="/r/new" class="btn btn-primary">New Request</a>

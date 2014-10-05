@@ -1,5 +1,5 @@
-angular.module('legacy.requests').
-factory('TvDb', ['$http', 'x2js', 'Config', function($http, x2js, Config) {
+angular.module('kindly.requests').
+factory('TvDb', ['$http', 'Config', function($http, Config) {
   return {
     get: function(query, callback) {
       var today = new Date();

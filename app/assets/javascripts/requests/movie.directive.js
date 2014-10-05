@@ -1,5 +1,7 @@
-angular.module('legacy.requests').directive('movie', function() {
+angular.module('kindly.requests').directive('movie', function() {
   return {
+    restrict: 'E',
+    replace: true,
     scope: {
       movie: '='
     },

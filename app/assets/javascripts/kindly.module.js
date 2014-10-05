@@ -1,7 +1,7 @@
-var legacy = angular.module('legacy', ['legacy.home', 'legacy.requests',
+var kindly = angular.module('kindly', ['kindly.home', 'kindly.requests',
   'ngRoute', 'templates']);
 
-legacy.config(function ($routeProvider, $locationProvider) {
+kindly.config(function ($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'home.html',
