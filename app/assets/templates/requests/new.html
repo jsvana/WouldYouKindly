@@ -1,0 +1,48 @@
+<h1>New Request</h1>
+<div class="row">
+	<div class="col-md-3">
+		<div class="form-group">
+			<label for="medium">Medium</label>
+			<select class="form-control" ng-model="medium" ng-change="changeMedium()">
+				<option value="movie">Movie</option>
+				<option value="music">Music</option>
+				<option value="tv-show">TV Show</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="col-md-9">
+		<div class="form-group">
+			<label for="name">Name</label>
+			<input class="form-control" placeholder="Search terms..." ng-change="search()" ng-model="query" ng-model-options="{debounce: 1000}">
+		</div>
+	</div>
+</div>
+
+<div ng-show="searching('movie')">
+	<label>Suggestions</label>
+	<div movie="suggestion" ng-repeat="suggestion in suggestions" ng-click="select(suggestion)"></div>
+</div>
+
+<div ng-show="searching('music')">
+	<label>Suggestions</label>
+	<div music="suggestion" ng-repeat="suggestion in suggestions" ng-click="select(suggestion)"></div>
+</div>
+
+<div ng-show="searching('tv-show')">
+	<label>Suggestions</label>
+	<div tv-show="suggestion" ng-repeat="suggestion in suggestions" ng-click="select(suggestion)"></div>
+</div>
+
+<div ng-show="hasSelection()">
+	<label>Selection</label>
+	<div suggestion="selection"></suggestion>
+</div>
+
+<div class="row">
+	<div class="col-md-12 center">
+		<div class="form-group">
+			<button class="btn btn-primary">Submit Request</button>
+		</div>
+	</div>
+</div>

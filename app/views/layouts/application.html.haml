@@ -1,0 +1,14 @@
+!!! 5
+%html
+  %head
+    %title Legacy
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body(ng-app="legacy")
+    = nav_bar brand: 'Legacy', responsive: true do
+      = menu_group do
+        = menu_item 'Home', '/'
+        = menu_item 'Requests', '/r'
+    .container
+      = yield

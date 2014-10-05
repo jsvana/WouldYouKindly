@@ -1,0 +1,16 @@
+<div class="row suggestion">
+	<div class="col-md-2 art" ng-show="movie.posters">
+		<img ng-src="{{ movie.posters.thumbnail }}" class="img-thumbnail">
+	</div>
+	<div class="col-md-10">
+		<strong>{{ movie.title }}</strong>
+		<span>({{ movie.year }})</span>
+		<p>
+			<span class="label label-default">{{ movie.mpaa_rating }}</span>
+			<span>{{ movie.runtime }} min</span>
+		</p>
+		<p>Audience Score: {{ movie.ratings.audience_score }}/100</p>
+		<p>Critics Score: {{ movie.ratings.critics_score }}/100</p>
+		<a ng-href="{{ movie.links.self }}">View on Rotten Tomatoes</a>
+	</div>
+</div>

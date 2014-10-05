@@ -1,0 +1,7 @@
+<h1>Requests</h1>
+<div ng-repeat="request in requests | orderBy:predicate">
+	<h4>{{ request.name }}</h4>
+	<span>{{ request.votes }}</span>
+	<a href="#" ng-click="upvote(request)">Upvote</a>
+</div>
+<a href="/r/new" class="btn btn-primary">New Request</a>

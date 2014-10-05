@@ -1,0 +1,16 @@
+<div class="row suggestion">
+	<div class="col-md-2 art" ng-show="tvShow.images">
+		<img ng-src="{{ tvShow.images.poster }}" class="img-thumbnail" style="height: 160px;">
+	</div>
+	<div class="col-md-10">
+		<strong>{{ tvShow.title }}</strong>
+		<span>({{ tvShow.year }})</span>
+		<p>
+			<span class="label label-default">{{ tvShow.certification }}</span>
+			<span>{{ tvShow.runtime }} min</span>
+			<span> - {{ tvShow.genres.join(', ') }}</span>
+		</p>
+		<p>Score: {{ tvShow.ratings.percentage }}/100</p>
+		<a ng-href="{{ tvShow.url }}">View on Trakt.tv</a>
+	</div>
+</div>

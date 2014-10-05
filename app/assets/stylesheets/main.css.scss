@@ -1,0 +1,17 @@
+.suggestion {
+	margin: 5px 0;
+	padding: 10px 0;
+
+	&:hover {
+		background-color: #abd5ea;
+		cursor: pointer;
+	}
+
+	.art {
+		text-align: center;
+	}
+}
+
+.center {
+	text-align: center;
+}
