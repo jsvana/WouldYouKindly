@@ -1,4 +1,13 @@
-<h1>Requests</h1>
-<p ng-show="requests.length === 0">No requests, yet.</p>
-<request request="request" ng-repeat="request in requests | orderBy:predicate"></request>
-<a href="/r/new" class="btn btn-primary">New Request</a>
+<div class="row">
+	<div class="col-md-12">
+		<h1>Requests</h1>
+		<p ng-show="requests.length === 0">No requests, yet.</p>
+		<request request="request" ng-repeat="request in requests | orderBy:predicate"></request>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12 center">
+		<a href="/r/new" class="btn btn-primary">New Request</a>
+	</div>
+</div>

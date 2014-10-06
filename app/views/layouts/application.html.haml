@@ -1,14 +1,22 @@
 !!! 5
 %html
   %head
-    %title Legacy
+    %title WouldYouKindly
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body(ng-app="kindly")
-    = nav_bar brand: 'WouldYouKindly', responsive: true do
-      = menu_group do
-        = menu_item 'Home', '/'
-        = menu_item 'Requests', '/r'
+    %nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          %a.navbar-brand(href="/") WouldYouKindly
+
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav(ng-controller="header")
+            %li(ng-class="{active: isActive('')}")
+              %a(href="/") Home
+            %li(ng-class="{active: isActive('r')}")
+              %a(href="/r") Requests
+
     .container
       = yield

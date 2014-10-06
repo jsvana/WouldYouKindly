@@ -21,6 +21,7 @@
 //= require kindly.module
 //
 //= require home.controller
+//= require header.controller
 //
 //= require shared/shared.module
 //= require shared/config.factory
