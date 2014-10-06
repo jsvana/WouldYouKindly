@@ -14,9 +14,11 @@
 //= require angular-route/angular-route
 //= require angular-rails-resource/angularjs-rails-resource
 //= require angular-rails-templates
-//= require_tree ../templates
 //= require x2js/xml2json.min
 //= require angular-x2js/dist/x2js.min
+//= require angular-bootstrap/ui-bootstrap-tpls.min
+//
+//= require_tree ../templates
 //
 //= require kindly.module
 //

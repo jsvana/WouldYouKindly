@@ -4,6 +4,7 @@
     "angular": "latest",
     "angular-route": "latest",
     "angular-rails-resource": "latest",
-    "angular-x2js": "latest"
+    "angular-x2js": "latest",
+    "angular-bootstrap": "latest"
   }
 }

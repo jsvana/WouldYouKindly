@@ -1,1 +1,1 @@
-angular.module('kindly.requests', ['kindly.shared', 'rails', 'cb.x2js']);
+angular.module('kindly.requests', ['kindly.shared', 'rails', 'cb.x2js', 'ui.bootstrap']);

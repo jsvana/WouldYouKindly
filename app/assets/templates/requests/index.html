@@ -1,13 +1,28 @@
-<div class="row">
-	<div class="col-md-12">
-		<h1>Requests</h1>
-		<p ng-show="requests.length === 0">No requests, yet.</p>
-		<request request="request" ng-repeat="request in requests | orderBy:predicate"></request>
-	</div>
-</div>
+<tabset justified="true">
+  <tab heading="All Requests">
+    <h1>All Requests</h1>
+    <p ng-show="requests.length === 0">No requests, yet.</p>
+    <request request="request" ng-repeat="request in requests | orderBy:predicate"></request>
+  </tab>
+  <tab heading="Movies">
+    <h1>Movies</h1>
+    <p ng-show="(requests | filter:{medium: 'movie'}).length === 0">No requests, yet.</p>
+    <request request="request" ng-repeat="request in requests | filter:{medium: 'movie'} | orderBy:predicate"></request>
+  </tab>
+  <tab heading="Music">
+    <h1>Music</h1>
+    <p ng-show="(requests | filter:{medium: 'music'}).length === 0">No requests, yet.</p>
+    <request request="request" ng-repeat="request in requests | filter:{medium: 'music'} | orderBy:predicate"></request>
+  </tab>
+  <tab heading="TV Shows">
+    <h1>TV Shows</h1>
+    <p ng-show="(requests | filter:{medium: 'tv-show'}).length === 0">No requests, yet.</p>
+    <request request="request" ng-repeat="request in requests | filter:{medium: 'tv-show'} | orderBy:predicate"></request>
+  </tab>
+</tabset>
 
 <div class="row">
-	<div class="col-md-12 center">
-		<a href="/r/new" class="btn btn-primary">New Request</a>
-	</div>
+  <div class="col-md-12 center">
+    <a href="/r/new" class="btn btn-primary">New Request</a>
+  </div>
 </div>
