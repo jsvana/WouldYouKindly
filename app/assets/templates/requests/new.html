@@ -19,6 +19,13 @@
 	</div>
 </div>
 
+<div ng-show="hasSelection()" class="row">
+	<div class="col-md-12">
+		<label>Selection</label>
+		<suggestion suggestion="selection"></suggestion>
+	</div>
+</div>
+
 <div ng-show="searching('movie')">
 	<label>Suggestions</label>
 	<movie movie="suggestion" ng-repeat="suggestion in suggestions" ng-click="select(suggestion)"></movie>
@@ -32,13 +39,6 @@
 <div ng-show="searching('tv-show')">
 	<label>Suggestions</label>
 	<tv-show tv-show="suggestion" ng-repeat="suggestion in suggestions" ng-click="select(suggestion)"></tv-show>
-</div>
-
-<div ng-show="hasSelection()" class="row">
-	<div class="col-md-12">
-		<label>Selection</label>
-		<suggestion suggestion="selection"></suggestion>
-	</div>
 </div>
 
 <div class="row">
