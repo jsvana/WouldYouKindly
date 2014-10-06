@@ -1,23 +1,54 @@
 <tabset justified="true">
   <tab heading="All Requests">
-    <h1>All Requests</h1>
+		<div class="input-group">
+			<span class="input-group-addon">
+				<span class="glyphicon glyphicon-search"></span>
+			</span>
+			<input type="text" class="form-control" placeholder="Search..." ng-model="allSearch">
+		</div>
+
     <p ng-show="requests.length === 0">No requests, yet.</p>
-    <request request="request" ng-repeat="request in requests | orderBy:predicate"></request>
+
+    <request request="request" ng-repeat="request in requests | filter:allSearch | orderBy:predicate"></request>
   </tab>
+
   <tab heading="Movies">
-    <h1>Movies</h1>
+		<div class="input-group">
+			<span class="input-group-addon">
+				<span class="glyphicon glyphicon-search"></span>
+			</span>
+			<input type="text" class="form-control" placeholder="Search..." ng-model="movieSearch">
+		</div>
+
     <p ng-show="(requests | filter:{medium: 'movie'}).length === 0">No requests, yet.</p>
-    <request request="request" ng-repeat="request in requests | filter:{medium: 'movie'} | orderBy:predicate"></request>
+
+    <request request="request" ng-repeat="request in requests | filter:{medium: 'movie'} | filter:movieSearch | orderBy:predicate"></request>
   </tab>
+
   <tab heading="Music">
-    <h1>Music</h1>
+		<div class="input-group">
+			<span class="input-group-addon">
+				<span class="glyphicon glyphicon-search"></span>
+			</span>
+			<input type="text" class="form-control" placeholder="Search..." ng-model="musicSearch">
+		</div>
+
     <p ng-show="(requests | filter:{medium: 'music'}).length === 0">No requests, yet.</p>
-    <request request="request" ng-repeat="request in requests | filter:{medium: 'music'} | orderBy:predicate"></request>
+
+    <request request="request" ng-repeat="request in requests | filter:{medium: 'music'} | filter:musicSearch | orderBy:predicate"></request>
   </tab>
+
   <tab heading="TV Shows">
-    <h1>TV Shows</h1>
+		<div class="input-group">
+			<span class="input-group-addon">
+				<span class="glyphicon glyphicon-search"></span>
+			</span>
+			<input type="text" class="form-control" placeholder="Search..." ng-model="tvShowSearch">
+		</div>
+
     <p ng-show="(requests | filter:{medium: 'tv-show'}).length === 0">No requests, yet.</p>
-    <request request="request" ng-repeat="request in requests | filter:{medium: 'tv-show'} | orderBy:predicate"></request>
+
+    <request request="request" ng-repeat="request in requests | filter:{medium: 'tv-show'} | filter:tvShowSearch | orderBy:predicate"></request>
   </tab>
 </tabset>
 
