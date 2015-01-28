@@ -1,54 +1,61 @@
 <tabset justified="true">
   <tab heading="All Requests">
-		<div class="input-group">
-			<span class="input-group-addon">
-				<span class="glyphicon glyphicon-search"></span>
-			</span>
-			<input type="text" class="form-control" placeholder="Search..." ng-model="allSearch">
-		</div>
-
-    <p ng-show="requests.length === 0">No requests, yet.</p>
+    <div class="input-group">
+      <span class="input-group-addon">
+	<span class="glyphicon glyphicon-search"></span>
+      </span>
+      <input type="text" class="form-control" placeholder="Search..." ng-model="allSearch">
+    </div>
 
     <request request="request" ng-repeat="request in requests | filter:allSearch | orderBy:predicate"></request>
+    <div class="no-results" ng-show="(requests | filter:allSearch).length === 0">
+      <span>No results found.</span>
+    </div>
   </tab>
 
   <tab heading="Movies">
-		<div class="input-group">
-			<span class="input-group-addon">
-				<span class="glyphicon glyphicon-search"></span>
-			</span>
-			<input type="text" class="form-control" placeholder="Search..." ng-model="movieSearch">
-		</div>
-
-    <p ng-show="(requests | filter:{medium: 'movie'}).length === 0">No requests, yet.</p>
+    <div class="input-group">
+      <span class="input-group-addon">
+	<span class="glyphicon glyphicon-search"></span>
+      </span>
+      <input type="text" class="form-control" placeholder="Search..." ng-model="movieSearch">
+    </div>
 
     <request request="request" ng-repeat="request in requests | filter:{medium: 'movie'} | filter:movieSearch | orderBy:predicate"></request>
+    <div class="no-results" ng-show="(requests | filter:{medium: 'movie'} |
+      filter:movieSearch).length === 0">
+      <span>No results found.</span>
+    </div>
   </tab>
 
   <tab heading="Music">
-		<div class="input-group">
-			<span class="input-group-addon">
-				<span class="glyphicon glyphicon-search"></span>
-			</span>
-			<input type="text" class="form-control" placeholder="Search..." ng-model="musicSearch">
-		</div>
-
-    <p ng-show="(requests | filter:{medium: 'music'}).length === 0">No requests, yet.</p>
+    <div class="input-group">
+      <span class="input-group-addon">
+	<span class="glyphicon glyphicon-search"></span>
+      </span>
+      <input type="text" class="form-control" placeholder="Search..." ng-model="musicSearch">
+    </div>
 
     <request request="request" ng-repeat="request in requests | filter:{medium: 'music'} | filter:musicSearch | orderBy:predicate"></request>
+    <div class="no-results" ng-show="(requests | filter:{medium: 'music'} |
+      filter:musicSearch).length === 0">
+      <span>No results found.</span>
+    </div>
   </tab>
 
   <tab heading="TV Shows">
-		<div class="input-group">
-			<span class="input-group-addon">
-				<span class="glyphicon glyphicon-search"></span>
-			</span>
-			<input type="text" class="form-control" placeholder="Search..." ng-model="tvShowSearch">
-		</div>
-
-    <p ng-show="(requests | filter:{medium: 'tv-show'}).length === 0">No requests, yet.</p>
+    <div class="input-group">
+      <span class="input-group-addon">
+	<span class="glyphicon glyphicon-search"></span>
+      </span>
+      <input type="text" class="form-control" placeholder="Search..." ng-model="tvShowSearch">
+    </div>
 
     <request request="request" ng-repeat="request in requests | filter:{medium: 'tv-show'} | filter:tvShowSearch | orderBy:predicate"></request>
+    <div class="no-results" ng-show="(requests | filter:{medium: 'tv-show'} |
+      filter:tvShowSearch).length === 0">
+      <span>No results found.</span>
+    </div>
   </tab>
 </tabset>
 
