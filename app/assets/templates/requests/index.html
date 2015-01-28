@@ -1,5 +1,9 @@
 <tabset justified="true">
-  <tab heading="All Requests">
+  <tab>
+    <tab-heading>
+      <span>All Requests <span class="badge">{{ requests.length }}</span></span>
+    </tab-heading>
+
     <div class="input-group">
       <span class="input-group-addon">
 	<span class="glyphicon glyphicon-search"></span>
@@ -14,6 +18,10 @@
   </tab>
 
   <tab heading="Movies">
+    <tab-heading>
+      <span>All Requests <span class="badge">{{ typeCount('movie') }}</span></span>
+    </tab-heading>
+
     <div class="input-group">
       <span class="input-group-addon">
 	<span class="glyphicon glyphicon-search"></span>
@@ -29,6 +37,10 @@
   </tab>
 
   <tab heading="Music">
+    <tab-heading>
+      <span>All Requests <span class="badge">{{ typeCount('music') }}</span></span>
+    </tab-heading>
+
     <div class="input-group">
       <span class="input-group-addon">
 	<span class="glyphicon glyphicon-search"></span>
@@ -44,6 +56,10 @@
   </tab>
 
   <tab heading="TV Shows">
+    <tab-heading>
+      <span>TV Shows <span class="badge">{{ typeCount('tv-show') }}</span></span>
+    </tab-heading>
+
     <div class="input-group">
       <span class="input-group-addon">
 	<span class="glyphicon glyphicon-search"></span>
