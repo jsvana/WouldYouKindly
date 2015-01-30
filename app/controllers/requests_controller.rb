@@ -19,6 +19,24 @@ class RequestsController < ApplicationController
     respond_with(@request)
   end
 
+  def approve
+    # TODO: Check if admin
+    @request = Request.find(params[:id])
+    @request.approve!
+
+    #respond_with(@request)
+    render json: @request
+  end
+
+  def deny
+    # TODO: Check if admin
+    @request = Request.find(params[:id])
+    @request.deny!
+
+    render json: @request
+    #respond_with(@request)
+  end
+
 private
 
   def request_params

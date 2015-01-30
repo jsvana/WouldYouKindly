@@ -1,4 +1,4 @@
-angular.module('kindly.requests').controller('index',
+angular.module('kindly.requests').controller('requests.index',
   ['$scope', '$filter', 'Request', function($scope, $filter, Request) {
     $scope.requests = [];
     Request.query().then(function (requests) {
@@ -19,6 +19,6 @@ angular.module('kindly.requests').controller('index',
         }
       }
       return count;
-    }
+    };
   }]
 );

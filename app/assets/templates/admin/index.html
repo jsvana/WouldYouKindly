@@ -1,0 +1,50 @@
+<tabset justified="true">
+  <tab>
+    <tab-heading>
+      <span>Pending Requests</span>
+      <span class="badge">{{ pendingCount() }}</span>
+    </tab-heading>
+
+    <div ng-repeat="request in requests | filter:{approvalState: 'pending'}">
+      <request request="request"></request>
+      <button ng-click="approve(request)" class="btn btn-primary">Approve</button>
+      <button ng-click="deny(request)" class="btn btn-danger">Deny</button>
+    </div>
+
+    <div class="no-results" ng-show="pendingCount() === 0">
+      <span>No pending requests.</span>
+    </div>
+  </tab>
+
+  <tab>
+    <tab-heading>
+      <span>Approved Requests</span>
+      <span class="badge">{{ approvedCount() }}</span>
+    </tab-heading>
+
+    <div ng-repeat="request in requests | filter:{approvalState: 'approved'}">
+      <request request="request"></request>
+      <button ng-click="deny(request)" class="btn btn-danger">Deny</button>
+    </div>
+
+    <div class="no-results" ng-show="approvedCount() === 0">
+      <span>No approved requests.</span>
+    </div>
+  </tab>
+
+  <tab>
+    <tab-heading>
+      <span>Denied Requests</span>
+      <span class="badge">{{ deniedCount() }}</span>
+    </tab-heading>
+
+    <div ng-repeat="request in requests | filter:{approvalState: 'denied'}">
+      <request request="request"></request>
+      <button ng-click="approve(request)" class="btn btn-primary">Approve</button>
+    </div>
+
+    <div class="no-results" ng-show="deniedCount() === 0">
+      <span>No denied requests.</span>
+    </div>
+  </tab>
+</tabset>

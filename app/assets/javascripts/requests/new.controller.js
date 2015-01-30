@@ -1,4 +1,4 @@
-angular.module('kindly.requests').controller('new',
+angular.module('kindly.requests').controller('requests.new',
   ['$scope', '$location', '$http', 'RottenTomatoes', 'LastFm', 'TvDb',
   'Request', function($scope, $location, $http, RottenTomatoes, LastFm,
   TvDb, Request) {
@@ -55,22 +55,22 @@ angular.module('kindly.requests').controller('new',
     $scope.search = function() {
       if ($scope.query.length > 1) {
         switch ($scope.medium) {
-          case 'movie':
-            $scope.searchMovies();
-            break;
+        case 'movie':
+          $scope.searchMovies();
+          break;
 
-          case 'music':
-            $scope.searchMusic();
-            break;
+        case 'music':
+          $scope.searchMusic();
+          break;
 
-          case 'tv-show':
-            $scope.searchTvShows();
-            break;
+        case 'tv-show':
+          $scope.searchTvShows();
+          break;
 
-          default:
-            // For troublemakers
-            $scope.suggestions = [];
-            break;
+        default:
+          // For troublemakers
+          $scope.suggestions = [];
+          break;
         }
       } else {
         $scope.suggestions = [];
@@ -100,7 +100,6 @@ angular.module('kindly.requests').controller('new',
           $location.path('/r');
         });
       }
-      //$location.path('/');
     };
   }]
 );

@@ -1,5 +1,5 @@
 var kindly = angular.module('kindly', ['kindly.home', 'kindly.requests',
-  'ngRoute', 'templates']);
+  'kindly.admin', 'ngRoute', 'templates']);
 
 kindly.config(function ($routeProvider, $locationProvider) {
   $routeProvider
@@ -7,13 +7,17 @@ kindly.config(function ($routeProvider, $locationProvider) {
       templateUrl: 'home.html',
       controller: 'home'
     })
+    .when('/admin', {
+      templateUrl: 'admin/index.html',
+      controller: 'admin.index'
+    })
     .when('/r', {
       templateUrl: 'requests/index.html',
-      controller: 'index'
+      controller: 'requests.index'
     })
     .when('/r/new', {
       templateUrl: 'requests/new.html',
-      controller: 'new'
+      controller: 'requests.new'
     });
 
   $locationProvider.html5Mode(true);

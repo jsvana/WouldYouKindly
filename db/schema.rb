@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20141005162123) do
     t.integer  "audience_score"
     t.integer  "critics_score"
     t.integer  "runtime"
+    t.string   "approval_state",   default: "pending"
   end
 
 end

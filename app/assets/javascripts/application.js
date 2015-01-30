@@ -28,6 +28,9 @@
 //= require shared/shared.module
 //= require shared/config.factory
 //
+//= require admin/admin.module
+//= require admin/index.controller
+//
 //= require requests/requests.module
 //= require requests/request.factory
 //
