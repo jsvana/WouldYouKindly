@@ -86,6 +86,10 @@ angular.module('kindly.requests').controller('requests.new',
       $scope.selectionMedium = $scope.medium;
     };
 
+    $scope.clearSelection = function() {
+      $scope.selection = null;
+    };
+
     $scope.hasSelection = function() {
       return $scope.selection !== null;
     };
