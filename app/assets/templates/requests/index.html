@@ -1,5 +1,5 @@
 <tabset justified="true">
-  <tab>
+  <tab select="selectTab('none')">
     <tab-heading>
       <span>All Requests</span>
       <span class="badge">{{ requests.length }}</span>
@@ -18,7 +18,7 @@
     </div>
   </tab>
 
-  <tab heading="Movies">
+  <tab heading="Movies" select="selectTab('Movie')">
     <tab-heading>
       <span>Movies</span>
       <span class="badge">{{ typeCount('movie') }}</span>
@@ -38,7 +38,7 @@
     </div>
   </tab>
 
-  <tab heading="Music">
+  <tab heading="Music" select="selectTab('Music')">
     <tab-heading>
       <span>Music</span>
       <span class="badge">{{ typeCount('music') }}</span>
@@ -58,7 +58,7 @@
     </div>
   </tab>
 
-  <tab heading="TV Shows">
+  <tab heading="TV Shows" select="selectTab('TV Show')">
     <tab-heading>
       <span>TV Shows</span>
       <span class="badge">{{ typeCount('tv-show') }}</span>
@@ -81,6 +81,6 @@
 
 <div class="row">
   <div class="col-md-12 center">
-    <a href="/r/new" class="btn btn-primary">New Request</a>
+    <a ng-href="{{ newRequestLink() }}" class="btn btn-primary">{{ newRequestText() }}</a>
   </div>
 </div>

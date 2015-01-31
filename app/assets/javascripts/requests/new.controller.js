@@ -8,6 +8,11 @@ angular.module('kindly.requests').controller('requests.new',
     $scope.selectionMedium = 'movie';
     $scope.query = '';
 
+    params = location.href.split('#');
+    if (params.length > 1) {
+      $scope.medium = params[1];
+    }
+
     $scope.changeMedium = function() {
       $scope.search();
     };

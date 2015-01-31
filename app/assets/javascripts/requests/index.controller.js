@@ -1,5 +1,7 @@
 angular.module('kindly.requests').controller('requests.index',
   ['$scope', '$filter', 'Request', function($scope, $filter, Request) {
+    var activeTab = 'none';
+
     $scope.requests = [];
     Request.query().then(function (requests) {
       $scope.requests = requests;
@@ -19,6 +21,27 @@ angular.module('kindly.requests').controller('requests.index',
         }
       }
       return count;
+    };
+
+    $scope.selectTab = function(tab) {
+      activeTab = tab;
+    };
+
+    $scope.newRequestLink = function() {
+      var url = '/r/new';
+      if (activeTab !== 'none') {
+        url += '#' + activeTab.toLowerCase().replace(/ /g, '-');
+      }
+      return url;
+    };
+
+    $scope.newRequestText = function() {
+      var text = 'New';
+      if (activeTab !== 'none') {
+        text += ' ' + activeTab;
+      }
+      text += ' Request';
+      return text;
     };
   }]
 );
