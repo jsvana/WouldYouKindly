@@ -10,6 +10,9 @@
 	<span class="glyphicon glyphicon-search"></span>
       </span>
       <input type="text" class="form-control" placeholder="Search..." ng-model="allSearch">
+      <span class="input-group-btn">
+	<a ng-href="{{ newRequestLink() }}" class="btn btn-primary">{{ newRequestText() }}</a>
+      </span>
     </div>
 
     <request request="request" ng-repeat="request in requests | filter:allSearch | orderBy:predicate"></request>
@@ -29,6 +32,9 @@
 	<span class="glyphicon glyphicon-search"></span>
       </span>
       <input type="text" class="form-control" placeholder="Search..." ng-model="movieSearch">
+      <span class="input-group-btn">
+	<a ng-href="{{ newRequestLink() }}" class="btn btn-primary">{{ newRequestText() }}</a>
+      </span>
     </div>
 
     <request request="request" ng-repeat="request in requests | filter:{medium: 'movie'} | filter:movieSearch | orderBy:predicate"></request>
@@ -49,6 +55,9 @@
 	<span class="glyphicon glyphicon-search"></span>
       </span>
       <input type="text" class="form-control" placeholder="Search..." ng-model="musicSearch">
+      <span class="input-group-btn">
+	<a ng-href="{{ newRequestLink() }}" class="btn btn-primary">{{ newRequestText() }}</a>
+      </span>
     </div>
 
     <request request="request" ng-repeat="request in requests | filter:{medium: 'music'} | filter:musicSearch | orderBy:predicate"></request>
@@ -69,6 +78,9 @@
 	<span class="glyphicon glyphicon-search"></span>
       </span>
       <input type="text" class="form-control" placeholder="Search..." ng-model="tvShowSearch">
+      <span class="input-group-btn">
+	<a ng-href="{{ newRequestLink() }}" class="btn btn-primary">{{ newRequestText() }}</a>
+      </span>
     </div>
 
     <request request="request" ng-repeat="request in requests | filter:{medium: 'tv-show'} | filter:tvShowSearch | orderBy:predicate"></request>
